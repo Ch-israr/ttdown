@@ -1,0 +1,31 @@
+.stories-section {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.stories-section h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.stories-section input {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.stories-section button {
+  padding: 12px 20px;
+  background: #1dbf73;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stories-section button:hover {
+  background: #17a866;
+}
