@@ -1,0 +1,21 @@
+.site-footer {
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+}
+
+.site-footer .footer-links a {
+  color: #ccc;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.site-footer .footer-links a:hover {
+  color: #1dbf73;
+}
+.site-footer p {
+  margin-top: 10px;
+  font-size: 14px;
+}
