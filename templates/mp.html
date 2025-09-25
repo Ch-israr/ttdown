@@ -2,75 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TikTok MP3 Downloader - Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TikTok MP3 Downloader</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <style>
-
-    main.main-container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
+    .spinner {
+      display: none;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #555;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
     }
-    .home_btn {
-      color: white;
-      padding: 10px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .coming-soon-card {
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 90%;
-    }
-
-    .coming-soon-card h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .coming-soon-card p {
-      font-size: 18px;
-      margin: 5px 0;
-    }
-
-    .coming-soon-card .muted {
-      font-size: 15px;
-    }
-
-    footer.footer {
-      color: #ccc;
-      text-align: center;
-      padding: 20px 10px;
-    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    .message-box { margin: 10px 0; color: red; font-weight: bold; }
+    .preview-card { margin-top: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; text-align: center; }
+    .preview-card img { max-width: 240px; border-radius: 6px; }
+    .download-btn { margin-top: 10px; display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; }
   </style>
 </head>
 <body>
+
   <header class="navbar">
-    <div class="logo">
-  <a href="/" style="color: inherit; text-decoration: none;">TikTok Downloader Pro</a>
-</div>
-    <nav>
-      <a href="/" class="home_btn">Home</a>
-    </nav>
+    <div class="logo">TikTok Downloader Pro</div>
   </header>
 
   <main class="main-container">
-    <div class="coming-soon-card">
-      <h1>TikTok MP3 Downloader</h1>
-      <p>Coming soon! 🎶</p>
-      <p class="muted">Stay tuned for the extension launch.</p>
+    <h1>Download TikTok Audio (MP3)</h1>
+<div class="search-area">
+    <form id="mp3-form" class="download-box">
+      <input type="text" id="mp3-url" placeholder="Enter TikTok URL" required>
+      <button type="submit" class="download-btn">Fetch & Convert</button>
+    </form>
+  </div>
+    <div class="spinner" id="spinner"></div>
+
+    <div id="message" class="message-box"></div>
+
+    <div id="preview" class="preview-card" style="display:none;">
+      <img id="preview-thumbnail" src="" alt="Thumbnail">
+      <h3 id="preview-title"></h3>
+      <audio id="preview-audio" controls></audio>
+      <br>
+      <a id="download-link" class="download-btn" href="#" download>Download MP3</a>
     </div>
   </main>
 
-  <footer class="footer">
-    <div>© TikTok MP3 Downloader</div>
+  <footer class="site-footer">
+    <p>&copy; 2025 TikTok Downloader Pro. All rights reserved.</p>
   </footer>
+
+  <script src="{{ url_for('static', filename='js/mp.js') }}"></script>
 </body>
 </html>

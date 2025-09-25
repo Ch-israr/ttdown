@@ -10,12 +10,47 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
 
   {% block extra_css %}{% endblock %}
+--- a/file:///d%3A/porject/apk/ttdown/templates/base.html
++++ b/file:///d%3A/porject/apk/ttdown/templates/base.html
+@@ -12,6 +12,14 @@
 </head>
 <body>
-  {% include 'header.html' %}
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-  {% include 'footer.html' %}
+  {% extends "base.html" %}
+{% block content %}
+<main class="main-container">
+  <h1>Download TikTok Stories</h1>
+
+  <form method="POST" class="download-box">
+    <input type="text" name="username" placeholder="Enter TikTok username" value="{{ username or '' }}" required>
+    <button type="submit" class="download-btn">Fetch Stories</button>
+  </form>
+
+  {% if error %}
+    <div class="message-box">{{ error }}</div>
+  {% endif %}
+
+  {% if files %}
+    <div class="thumbnail-card" style="flex-direction:column;">
+      <h2>Available Stories:</h2>
+      {% for file in files %}
+        <div class="thumb-actions">
+          <video width="240" controls>
+            <source src="{{ file }}" type="video/mp4">
+          </video>
+          <a href="{{ file }}" class="download-btn" download>Download</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</main>
+{% endblock %}
+  <footer class="site-footer">
+    <p>&copy; 2024 TikTok Downloader Pro. All rights reserved.</p>
+  </footer>
+
+  <!-- Navigation Menu JS -->
+  <script src="{{ url_for('static', filename='js/manu.js') }}"></script>
+
+  {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -1,5 +1,120 @@
-<main class="main-container">
-  <h1>Contact Us</h1>
-  <p>Email: support@tiktokdownloaderpro.com</p>
-  <p>We’ll reply within 24 hours 🚀</p>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us — TikTok Downloader Pro</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/contact.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">TikTok Downloader Pro</div>
+      <nav id="nav-menu">
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="container">
+        <div class="card" role="main" aria-labelledby="contact-title">
+          <!-- Header -->
+          <div class="main-header">
+            <h1 id="contact-title">Contact Us</h1>
+          </div>
+          <p class="lead">
+            Have a question or need help? Reach out — we'll reply within 24
+            hours 🚀
+          </p>
+
+          <!-- Contact Info Chips -->
+          <div class="contact-info" aria-hidden="true">
+            <div class="chip">
+              Email:
+              <a
+                href="mailto:support@tiktokdownloaderpro.com"
+                style="color: inherit; text-decoration: none; margin-left: 6px"
+              >
+                support@tiktokdownloaderpro.com
+              </a>
+            </div>
+            <div class="chip">Support hours: 9:00 — 18:00 (UTC)</div>
+          </div>
+
+          <!-- Contact Form -->
+          <form id="contact-form" method="post" novalidate>
+            <div>
+              <label for="name">Your Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Jane Doe"
+                required
+              />
+            </div>
+            <div>
+              <label for="email">Email Address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us how we can help..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Honeypot Field (invisible for bots) -->
+            <input
+              type="text"
+              name="website"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <!-- Actions -->
+            <div class="actions">
+              <button type="submit">Send Message</button>
+              <div class="note" id="form-status" aria-live="polite"></div>
+            </div>
+            <p class="note" style="margin-top: 8px">
+              By contacting us you agree to our privacy policy. We reply within
+              24 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="/contact">Contact</a>
+        <a href="/services">Services</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+      <p>&copy; 2025 TikTok Downloader Pro. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("Z-EczO4A_CnCUJca9"); // get from EmailJS dashboard
+      })();
+    </script>
+    <script src="{{ url_for('static', filename='js/mail.js') }}"></script>
+  </body>
+</html>

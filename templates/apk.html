@@ -9,7 +9,8 @@
 <body>
   <header class="navbar">
     <div class="logo">TikTok Downloader Pro</div>
-    <nav>
+     <div class="menu-toggle" id="menu-toggle">☰</div>
+    <nav id="nav-menu">
       <a href="/">Home</a>
       <a href="/apk" class="app-btn">Download with App</a>
     </nav>
@@ -26,5 +27,6 @@
   <footer class="footer">
     <div>© TikTok Downloader Pro</div>
   </footer>
+  <script src="{{ url_for('static', filename='js/manu.js') }}"></script>
 </body>
 </html>

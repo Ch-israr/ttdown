@@ -8,23 +8,25 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">
-  <a href="/" style="color: inherit; text-decoration: none;">TikTok Downloader Pro</a>
-</div>
-    <nav>
-        <a href="/">Home</a>
+  <div class="logo">TikTok Downloader Pro</div>
+
+  <!-- Hamburger for mobile -->
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <nav id="nav-menu">
+    <a href="/">Home</a>
       <a href="/stories">Download TikTok Stories</a>
-      <a href="/mp">Download TikTok MP3</a>
       <a href="/apk" class="app-btn">Download with App</a>
-    </nav>
-  </header>
+  </nav>
+</header>
+
 
   <main class="main-container">
     <h1>TikTok Video Downloader</h1>
 
     <div class="search-area">
       <form id="downloadForm" class="download-box" method="POST" action="/download">
-        <input id="urlInput" name="url" type="text" placeholder="Paste TikTok link here..." required autocomplete="off">
+        <input id="urlInput" name="url" type="text" placeholder="Paste TikTok link here..." required autocomplete="on">
         <select name="quality" id="qualitySelect" aria-label="Quality">
           <option value="best">Best Quality</option>
           <option value="worst">Worst Quality</option>
@@ -69,13 +71,15 @@
 
   <footer class="site-footer">
   <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/templates/contact.html">Contact</a>
-    <a href="/services.html">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/services">Services</a>
     <a href="/templates/privacy.html">Privacy Policy</a>
   </div>
   <p>&copy; 2025 YourWebsiteName. All rights reserved.</p>
 </footer>
+<!---- nav manu --->
+ <script src="{{ url_for('static', filename='js/manu.js') }}"></script>
+<!--- main script -->
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
