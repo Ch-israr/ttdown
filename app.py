@@ -343,4 +343,5 @@ def internal_err(e):
     return render_template("error.html", message="Internal server error"), 500
 
 if __name__ == "__main__":
-    app.run()
+    app.run((debug=False, port=5000, host="0.0.0.0")
+
