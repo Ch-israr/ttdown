@@ -341,9 +341,3 @@ def download_mp3():
 def internal_err(e):
     logging.exception("Internal server error")
     return render_template("error.html", message="Internal server error"), 500
-
-
-if __name__ == "__main__":
-    # Dev server
-    app.run()
-
