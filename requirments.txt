@@ -1,5 +1,5 @@
-Flask==3.1.2
-yt-dlp==2.32.5
-TikTokApi==7.1.0
-requests==2.32.5
-beautifulsoup4==4.13.5
+Flask
+yt-dlp
+TikTokApi
+requests
+beautifulsoup4
