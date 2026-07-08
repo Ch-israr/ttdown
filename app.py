@@ -19,7 +19,7 @@ import re
 import uuid
 import shutil
 import logging
-from flask import Flask, render_template, request, jsonify, send_file, abort
+from flask import Flask, render_template, request, jsonify, send_file, abort, Response
 from pathlib import Path
 
 # Attempt imports for primary libraries
@@ -151,6 +151,21 @@ def extract_thumbnail_info(url: str):
 @app.route("/")
 def index():
     return render_template("index.html")
+@app.route("/robots.txt")
+def robots():
+    robots = """User-agent: *
+Disallow: /cgi-bin/
+
+Sitemap: https://ttdown-ouod.onrender.com/sitemap.xml
+"""
+    return Response(robots, mimetype="text/plain")
+
+@app.route("/robots.txt")
+def robots():
+    robots = """User-agent: *
+Disallow: /cgi-bin/
+"""
+    return Response(robots, mimetype="text/plain")
 
 @app.route("/")
 def home():
