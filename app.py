@@ -175,7 +175,14 @@ def privacy_page():
 @app.route("/apk")
 def apk():
     return render_template("apk.html")
+@app.route("/robots.txt")
+def robots():
+    robots = """User-agent: *
+Disallow: /cgi-bin/
 
+Sitemap: https://ttdown-ouod.onrender.com/sitemap.xml
+"""
+    return Response(robots, mimetype="text/plain")
 
 @app.route("/thumbnail", methods=["POST"])
 def thumbnail():
