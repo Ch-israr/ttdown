@@ -171,6 +171,15 @@ def contact_page():
 @app.route('/privacy')
 def privacy_page():
     return render_template('privacy.html')
+@app.route("/robots.txt")
+def robots():
+    robots = """User-agent: *
+Disallow: /cgi-bin/
+
+Sitemap: https://ttdown-ouod.onrender.com/sitemap.xml
+"""
+    return Response(robots, mimetype="text/plain")
+
 
 @app.route("/apk")
 def apk():
